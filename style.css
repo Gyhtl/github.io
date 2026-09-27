@@ -1,4 +1,4 @@
-/* === Переменные === */
+
 :root {
     --main-color:     #6B3E2E;
     --contrast-color: #D9A441;
@@ -9,7 +9,8 @@
     --border-color:   #C08A5A;
 }
 
-/* === База === */
+
+/* это БАААААЗА */
 body {
     margin: 0;
     min-height: 100vh;
@@ -20,13 +21,14 @@ body {
     color: #333;
 }
 
+/* Фоновый узор */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     background: url("https://img.icons8.ru/?size=100&id=12860&format=png&color=000000") repeat;
     background-size: 100px 100px;
-    transform: rotate(34deg) scale(1.5);
+    transform: rotate(35deg) scale(1.5);
     opacity: 0.1;
     pointer-events: none;
     z-index: -1;
@@ -37,7 +39,8 @@ a {
     color: inherit;
 }
 
-/* === Шапка === */
+
+/* шапка */
 .header {
     display: flex;
     align-items: center;
@@ -52,6 +55,7 @@ a {
     margin-right: 5%;
 }
 
+/* Активный пункт меню */
 .active-site {
     position: relative;
     padding: 4px 12px;
@@ -60,72 +64,16 @@ a {
 .active-site::after {
     content: "";
     position: absolute;
-    left: 0; right: 0; bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 3px;
     background-color: currentColor;
     border-radius: 3px;
 }
 
-/* === Основной блок === */
-main {
-    flex: 1;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
 
-.box {
-    width: 50%;
-    height: 400px;
-    margin: 20px auto 0;
-    padding: 25px;
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    color: var(--text-color);
-    background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.4) 50%, rgba(0,0,0,0)),
-                url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtSQP_rKgx7RVVCAmzwNhcE2Gp5rq0JumCdGKiSaZjBTiq6kCOpYZE4lc&s=10) center/cover no-repeat;
-
-    border: 2px solid var(--contrast-color);
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.box h2 {
-    margin: 0 0 10px;
-    font-size: 28px;
-    text-shadow: 0 2px 6px rgba(0,0,0,.6);
-}
-
-.box p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.5;
-    text-shadow: 0 1px 4px rgba(0,0,0,.6);
-}
-
-/* === Три блока === */
-.row-plus {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 20px;
-    padding: 40px 0;
-    background-color: var(--main-color);
-    color: var(--text-color);
-    border-radius: 10px;
-}
-
-.box-plus {
-    padding: 20px;
-    border: 2px solid var(--border-color);
-    border-radius: 10px;
-}
-
-/* === Подвал === */
+/* нижняя часть*/
 .footer {
     margin-top: auto;
     padding: 20px;
@@ -148,7 +96,21 @@ main {
     text-decoration: underline;
 }
 
-/* === Страница «Расположение» === */
+
+/* основной контейнер */
+main {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* ============================================================
+   6. КОМПОНЕНТЫ ВНУТРИ MAIN
+   ============================================================ */
+
+/* --- 6.1. Заголовок страницы (используется на всех страницах) --- */
 .page-title {
     text-align: center;
     margin-bottom: 30px;
@@ -164,11 +126,67 @@ main {
     color: #666;
 }
 
+
+/* --- 6.2. Главная страница: большой блок с фото --- */
+.box {
+    width: 50%;
+    height: 400px;
+    margin: 20px auto 0;
+    padding: 25px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    color: var(--text-color);
+    background: linear-gradient(to top, rgba(0, 0, 0, .85), rgba(0, 0, 0, .4) 50%, rgba(0, 0, 0, 0)),
+                url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtSQP_rKgx7RVVCAmzwNhcE2Gp5rq0JumCdGKiSaZjBTiq6kCOpYZE4lc&s=10) center/cover no-repeat;
+
+    border: 2px solid var(--contrast-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.box h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .6);
+}
+
+.box p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+}
+
+
+/* --- 6.3. Главная страница: три блока с преимуществами --- */
+.row-plus {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    padding: 40px 0;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+.box-plus {
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+
+/* --- 6.4. Страница «Расположение» и «Контакты»: карточки --- */
 .location-info {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 0 auto 40px;   
+    margin: 0 auto 40px;
     width: 60%;
 }
 
@@ -193,6 +211,8 @@ main {
     font-size: 15px;
 }
 
+
+/* --- 6.5. Карта (Яндекс.Карты) --- */
 .map-section {
     margin-bottom: 40px;
     text-align: center;
@@ -213,7 +233,131 @@ main {
     box-shadow: var(--shadow);
 }
 
-/* === Телефон === */
+
+/* --- 6.6. Форма обратной связи (страница «Контакты») --- */
+.contact-form {
+    width: 50%;
+    margin: 0 auto 40px;
+    padding: 25px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--contrast-color);
+}
+
+.contact-form button {
+    padding: 10px 25px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: var(--contrast-color);
+    color: var(--main-color);
+}
+
+
+/* --- 6.7. Страница «Прайс-лист»: категории товаров --- */
+.price-category {
+    width: 80%;
+    margin: 0 auto 40px;
+    padding: 25px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.price-category h2 {
+    color: var(--main-color);
+    font-size: 24px;
+    text-align: center;
+    margin: 0 0 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--contrast-color);
+}
+
+/* --- 6.8. Карточки товаров (идут в ряд) --- */
+.price-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.price-item {
+    width: 200px;
+    padding: 15px;
+    background-color: var(--page-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.price-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #ddd;
+}
+
+.price-item h3 {
+    color: var(--main-color);
+    font-size: 16px;
+    margin: 10px 0 5px;
+}
+
+.price-item p {
+    color: #666;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px 0 10px;
+}
+
+.price-item button {
+    padding: 8px 20px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.price-item button:hover {
+    background-color: var(--contrast-color);
+    color: var(--main-color);
+}
+
+
 @media (max-width: 768px) {
     .header {
         flex-wrap: wrap;
